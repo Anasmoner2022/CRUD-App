@@ -1,0 +1,42 @@
+<%- include('./layout/header') %>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);">
+                <div class="card-header text-white text-center bg-success" style="border-radius: 5px 5px 0 0;">
+                    <h4 class="mb-0">Edit User (<%= user.name %>)</h4>
+                </div>
+                <div class="card-body">
+                    <form action="/update/<%= user._id %>" method="post" id="add-form" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="name" class="form-label" style="font-weight: 600; color: #333;">Name</label>
+                            <input type="text" class="form-control" value="<%= user.name %>" id="name" placeholder="Enter name" name="name" style="box-shadow: none; transition: border-color 0.2s ease;" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label" style="font-weight: 600; color: #333;">Email</label>
+                            <input type="email" name="email" value="<%= user.email %>" class="form-control" id="email" placeholder="Enter email" style="box-shadow: none; transition: border-color 0.2s ease;" >
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label" style="font-weight: 600; color: #333;">Phone</label>
+                            <input type="text" name="phone" value="<%= user.phone %>" class="form-control" id="phone" placeholder="Enter phone" style="box-shadow: none; transition: border-color 0.2s ease;" >
+                        </div>
+                        <div class="mb-3">
+                            <label for="image" class="form-label" style="font-weight: 600; color: #333;">Select Image</label>
+                            <input type="file" name="image" class="form-control" id="image" style="border: 1px solid #ccc; padding: 10px; border-radius: 5px; transition: border-color 0.2s ease;" required>
+                            <img src="/<%= user.image %>" width="100" class="img-thumbnail mt-1">
+                            <input type="hidden" name="old_image" value="<%= user.image %>">
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" name="submit" value="update User" class="btn btn-success" style="transition: background-color 0.3s ease, transform 0.2s ease;">
+                                Update User
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('layout/footer') %>

@@ -1,0 +1,39 @@
+<%- include('./layout/header') %>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);">
+                    <div class="card-header text-white text-center" style="background-color: #007bff; border-radius: 5px 5px 0 0;">
+                        <h4 class="mb-0">Add New User</h4>
+                    </div>
+                    <div class="card-body">
+                        <form action="/add" method="post" id="add-form" enctype="multipart/form-data">
+                            <div class="mb-3">
+                                <label for="name" class="form-label" style="font-weight: 600; color: #333;">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" style="box-shadow: none; transition: border-color 0.2s ease;" >
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label" style="font-weight: 600; color: #333;">Email</label>
+                                <input type="email" name="email" class="form-control" id="email" placeholder="Enter email" style="box-shadow: none; transition: border-color 0.2s ease;">
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label" style="font-weight: 600; color: #333;">Phone</label>
+                                <input type="text" name="phone" class="form-control" id="phone" placeholder="Enter phone" style="box-shadow: none; transition: border-color 0.2s ease;" >
+                            </div>
+                            <div class="mb-3">
+                                <label for="image" class="form-label" style="font-weight: 600; color: #333;">Select Image</label>
+                                <input type="file" name="image" class="form-control" id="image" style="border: 1px solid #ccc; padding: 10px; border-radius: 5px; transition: border-color 0.2s ease;" required>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button type="submit" name="submit" value="add User" class="btn btn-primary" style="background-color: #007bff; color: white; transition: background-color 0.3s ease, transform 0.2s ease;">
+                                    Add User
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<%- include('layout/footer') %>
